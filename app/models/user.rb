@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
 
   private
     def ensure_an_admin_remains
+      puts "I'm in User#ensure_an_admin_remains"
+      puts "****************************"
       if User.count.zero?
         raise "Can't delete last user"
       end

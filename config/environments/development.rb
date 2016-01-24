@@ -27,17 +27,16 @@ Depot::Application.configure do
   # Don't actually send emails
   config.action_mailer.delivery_method = :test
   #
-  # Alternate configuration example, using gmail:
-  #   config.action_mailer.delivery_method = :smtp
-  #   config.action_mailer.smtp_settings = {
-  #     address:        "smtp.gmail.com",
-  #     port:           587, 
-  #     domain:         "domain.of.sender.net",
-  #     authentication: "plain",
-  #     user_name:      "dave",
-  #     password:       "secret",
-  #     enable_starttls_auto: true
-  #   } 
+  #Alternate configuration example, using gmail:
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:        "smtp.163.com",
+    port:           25, 
+    domain:         "163.com",
+    authentication: "login",
+    user_name:      "KLoong777@163.com",
+    password:       "zuohuiwoziji1"
+  } 
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

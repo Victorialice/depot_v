@@ -1,0 +1,31 @@
+the shell command to run this application:
+cd /home/bob/Documents/code/rails40/depot_v
+rails server -p 3333
+rails console
+then visit it in browser by url:
+http://localhost:3333
+
+
+
+
+QA:
+1. in this application, how does /login, /logout, /admin work?
+which controler#action are these urls dispatched to ?
+
+2. in this application, how does /en, /es work?
+which controler#action are these urls dispatched to ?
+
+3. in this application, when create a user, how to encrypted user's password?
+
+4. what's kind of association between moder Order and LineItem?
+
+5. Please take a look at server log below, when I visit /products in browser, when am i redirected to /login?
+
+Started GET "/products" for 127.0.0.1 at 2016-01-22 09:06:16 +0800
+Processing by ProductsController#index as HTML
+  User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Redirected to http://localhost:3333/login?locale=en
+  Filter chain halted as :authorize rendered or redirected
+  Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+

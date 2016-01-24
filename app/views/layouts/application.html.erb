@@ -11,7 +11,7 @@
 <!-- END:head -->
 <body class="<%= controller.controller_name %>">
 <!-- START:i18n -->
-  <div id="banner">
+ <div id="banner">
 <!-- START_HIGHLIGHT -->
     <%= form_tag store_path, class: 'locale' do %>
       <%= select_tag 'set_locale', 
@@ -21,10 +21,17 @@
       <%= javascript_tag "$('.locale input').hide()" %>
     <% end %>
 <!-- END_HIGHLIGHT -->
+
     <%= image_tag("logo.png") %>
     <%= @page_title || t('.title') %>
+    <span>
+      <form action="/search">
+        <input type="text" name="keyword" value="<%= params[:keyword] %>" class="fl input_text">
+        <input type="submit" value="submit"  class="fl input_button">
+      </form>
+    </span>
   </div>
-<!-- END:i18n -->
+  <!-- END:i18n -->
   <div id="columns">
     <div id="side">
       <!-- START:hidden_div -->
