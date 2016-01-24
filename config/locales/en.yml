@@ -49,7 +49,10 @@ en:
 #END:cart
 
 #START:main
+  add_html: "hehe"
   store:
+    search:
+      add_html:  "hahaha"
     index:
       title_html:  "Your Pragmatic Catalog"
       add_html:    "Add to Cart"

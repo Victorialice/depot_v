@@ -17,7 +17,7 @@ Depot::Application.routes.draw do
   end
   get "sessions/create"
   get "sessions/destroy"
-  get 'search'=>'products#search'
+  get 'search'=>'store#search'
 
   resources :users
   resources :products do

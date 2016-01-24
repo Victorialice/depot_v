@@ -9,7 +9,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  skip_before_action :authorize, only: :search
   # GET /products
   # GET /products.json
   def index
@@ -78,11 +77,6 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url }
       format.json { head :no_content }
     end
-  end
-
-def search
-    keyword = params["keyword"]
-    @products = Product.where(["title like ? or description like ?" , "%#{keyword}%", "%#{keyword}%"])
   end
 
 

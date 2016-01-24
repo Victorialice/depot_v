@@ -17,4 +17,9 @@ class StoreController < ApplicationController
       @products = Product.order(:title)
     end
   end
+def search
+    keyword = params["keyword"]
+    @products = Product.where(["title like ? or description like ?" , "%#{keyword}%", "%#{keyword}%"])
+  end
+
 end
