@@ -7,10 +7,10 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 # encoding: utf-8
-#Product.delete_all
-animals = [" Dog", " Pig", " Horse", " Fish", " Rabbit"]
-5.times do |i|
-Product.create!(title: 'CoffeeScript'+animals[i],
+Product.delete_all
+color= ["AO","BO","CO" , "DO","EO","FO","GO","HO","IO","GO"]
+10.times do |i|
+Product.create!(title: 'CoffeeScript'+color[i],
   description: 
     %{<p>
         CoffeeScript is JavaScript done right. It provides all of JavaScript's
@@ -22,7 +22,7 @@ Product.create!(title: 'CoffeeScript'+animals[i],
   image_url:   'cs.jpg',    
   price: 36.00)
 # . . .
-Product.create!(title: 'Programming Ruby 1.9 & 2.0'+animals[i],
+Product.create!(title: 'Programming Ruby 1.9 & 2.0'+color[i],
   description:
     %{<p>
         Ruby is the fastest growing and most exciting dynamic language
@@ -33,7 +33,7 @@ Product.create!(title: 'Programming Ruby 1.9 & 2.0'+animals[i],
   price: 49.95)
 # . . .
 
-Product.create!(title: 'Rails Test Prescriptions'+animals[i],
+Product.create!(title: 'Rails Test Prescriptions'+color[i],
   description: 
     %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing

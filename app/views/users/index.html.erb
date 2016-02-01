@@ -9,6 +9,7 @@ user_id: <%= debug session[:user_id] %>
 <table>
   <thead>
     <tr>
+      <th>Avatar</th>
       <th>Name</th>
       <th></th>
       <th></th>
@@ -19,6 +20,7 @@ user_id: <%= debug session[:user_id] %>
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><img src=<%= user.avatar.url(:thumb) %>/></td>
         <td><%= user.name %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>

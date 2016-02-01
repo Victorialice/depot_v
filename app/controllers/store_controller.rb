@@ -16,6 +16,7 @@ class StoreController < ApplicationController
     else
       @products = Product.order(:title)
     end
+    @products=Product.page(params[:page])
   end
 def search
     keyword = params["keyword"]
