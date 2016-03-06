@@ -18,7 +18,7 @@ Depot::Application.routes.draw do
   get "sessions/create"
   get "sessions/destroy"
   get 'search'=>'store#search'
-
+get "check_name/:name"=>"users#check_name"
   resources :users
   resources :products do
     get :who_bought, on: :member

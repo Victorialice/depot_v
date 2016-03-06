@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label :name, 'Name:' %>
-    <%= f.text_field :name, size: 40 %>
+    <%= f.text_field :name, size: 40, onBlur: "return checkUserName();"%>
   </div>
 
   <div class="field">

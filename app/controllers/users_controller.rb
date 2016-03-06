@@ -25,6 +25,19 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def check_name
+    user = User.find_by_name(params[:name])
+    if user.nil?
+      render :json =>{msg: '', success: 'OK'}
+      return
+    end 
+
+    if user.present? 
+      render :json =>{msg: 'already registered', success: 'NG'}
+      return
+    end 
+  end 
+
   # GET /users/1/edit
   def edit
   end
