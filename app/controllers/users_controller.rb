@@ -65,21 +65,14 @@ class UsersController < ApplicationController
 def distance 
     @user = User.new(
     name: params[:name],
-    password: params[:password]
+    password: params[:password],
     password_confirmation: params[:password]
     )
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to users_url,
-          notice: "User #{@user.name} was successfully created." }
-        format.json { render action: 'show',
-          status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors,
-          status: :unprocessable_entity }
-      end
+    if @user.save
+      render :json =>{msg: '', success: 'OK'}
+    else
+      render :json =>{msg: 'already registered', success: 'NG'}
     end
   end
 
