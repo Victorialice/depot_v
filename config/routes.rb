@@ -9,6 +9,7 @@
 require './app/store'
 Depot::Application.routes.draw do
   match 'catalog' => StoreApp.new, via: :all
+  mount RuCaptcha::Engine => "/rucaptcha"
   get 'admin' => 'admin#index'
   controller :sessions do
     get  'login' => :new
