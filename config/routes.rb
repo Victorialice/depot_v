@@ -20,7 +20,9 @@ Depot::Application.routes.draw do
   get "sessions/destroy"
   get 'search'=>'store#search'
 get "check_name/:name"=>"users#check_name"
-post "api/users" => "users#distance"
+#post "api/users" => "users#distance"
+get "api/users" => "users#api"
+
   resources :users
   resources :products do
     get :who_bought, on: :member

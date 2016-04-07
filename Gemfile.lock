@@ -87,6 +87,7 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.5.5)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.0.0)
@@ -154,6 +155,7 @@ DEPENDENCIES
   kaminari (~> 0.14)
   paperclip
   pry-rails
+  rack-cors
   rails (= 4.0.0)
   rucaptcha
   sass-rails (~> 4.0.0)

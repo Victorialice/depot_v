@@ -9,6 +9,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
+  skip_before_filter :authorize, only: :api
 
   # GET /users
   # GET /users.json
@@ -26,6 +27,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def api
+    @user = User.all
+    render :json => @user
+  end
   def check_name
     user = User.find_by_name(params[:name])
     if user.nil?
