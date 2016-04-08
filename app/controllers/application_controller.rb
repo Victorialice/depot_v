@@ -18,7 +18,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
-    def authorize
+  def current_user
+    @user = User.find(session[:user_id])
+  end
+
+  def authorize
       if request.format == Mime::HTML 
         unless User.find_by(id: session[:user_id])
           redirect_to login_url, notice: "Please log in"

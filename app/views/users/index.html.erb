@@ -28,6 +28,10 @@ user_id: <%= debug session[:user_id] %>
         data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
+    <% if cannot? :update, @users%>
+        <%= link_to "Editasdfasdf", edit_user_path(@users) %>
+      <% end %>
   </tbody>
 </table>
 

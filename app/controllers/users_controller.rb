@@ -7,6 +7,9 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 class UsersController < ApplicationController
+
+  ROLES = %i[admin moderator author banned]
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
   skip_before_filter :authorize, only: :api

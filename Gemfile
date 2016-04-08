@@ -4,6 +4,8 @@ source 'https://ruby.taobao.org'
 gem 'rails', '4.0.0'
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'cancancan', '~> 1.10'
+
 gem "paperclip"
 
 # Use sqlite3 as the database for Active Record
